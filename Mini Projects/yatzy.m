@@ -5,15 +5,12 @@ clear
 close all
 
 nr_of_die = 5;
+number_of_experiments = 10000;
 
-throw = calc_dice_throw(nr_of_die)
-
-count = count_each_outcome(throw)
-
+throw_vector = monte_carlo(number_of_experiments)
 
 
 
-
-%histogram(throw)
+histogram(throw_vector)
 
 
