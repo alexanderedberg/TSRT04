@@ -5,12 +5,12 @@ function outcome = count_each_outcome(throw)
 
 count_outcome = zeros(1,6);
 
-for i = 1:length(throw)
-    for j = 1:6
+for dice = 1:length(throw)
+    for value = 1:6
         
-        if j == throw(i)
+        if value == throw(dice)
 
-            count_outcome(j) = count_outcome(j)+1;
+            count_outcome(value) = count_outcome(value)+1;
 
         end
     end
@@ -18,7 +18,22 @@ end
 
 count_outcome;
 
-[M,I] = max(count_outcome);
+[number_of_most_common_outcome,most_common_outcome] = max(count_outcome);
+number_of_most_common_outcome
+outcome = most_common_outcome;
 
-outcome = I;
+
+
+rethrow = []
+
+for dice = 1:length(throw)
+    if throw(dice) ~= most_common_outcome
+        rethrow = [rethrow dice]
+
+    end
+end
+
+
+
+
 end
